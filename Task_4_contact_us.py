@@ -8,7 +8,7 @@ lastname = "Stachowski"
 email = "test@gmail.com"
 comment = "Hello"
 
-driver = webdriver.Chrome(executable_path='D:\Programming\Selenium\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5\chromedriver.exe')
 driver.get('http://webdriveruniversity.com/Contact-Us/contactus.html')
 
 #contact_us_btn = driver.find_element_by_xpath('//*[@id="contact-us"]/div/div[1]')

@@ -9,7 +9,7 @@ firstname = "Bartek"
 lastname = "Stachowski"
 zipcode = "53321"
 
-driver = webdriver.Chrome(executable_path='D:\Programming\Selenium\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5\chromedriver.exe')
 driver.get('https://www.saucedemo.com/')
 driver.maximize_window() 
 

@@ -6,7 +6,7 @@ from time import sleep
 username = "standard_user"
 password = "secret_sauce"
 
-driver = webdriver.Chrome(executable_path='D:\Programming\Selenium\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5\chromedriver.exe')
 driver.get('https://www.saucedemo.com/')
 
 username_textbox = driver.find_element_by_xpath('//*[@id="user-name"]') 

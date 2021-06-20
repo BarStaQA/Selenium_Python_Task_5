@@ -14,7 +14,7 @@ ssn = "123456789"
 username = "Selenium2"
 password = "123456789"
 
-driver = webdriver.Chrome(executable_path='D:\Programming\Selenium\chromedriver.exe')
+driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5\chromedriver.exe')
 driver.get('https://parabank.parasoft.com/parabank/register.htm')
 
 firstname_textbox = driver.find_element_by_xpath('//*[@id="customer.firstName"]').send_keys(firstname)
