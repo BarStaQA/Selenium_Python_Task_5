@@ -11,26 +11,23 @@ comment = "Hello"
 driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5\chromedriver.exe')
 driver.get('http://webdriveruniversity.com/Contact-Us/contactus.html')
 
-#contact_us_btn = driver.find_element_by_xpath('//*[@id="contact-us"]/div/div[1]')
-#contact_us_btn.click()
-
-first_name_textbox = driver.find_element_by_css_selector('#contact_form > input:nth-child(1)') 
+first_name_textbox = driver.find_element_by_name('first_name') 
 first_name_textbox.send_keys(firstname)
 
-last_name_textbox = driver.find_element_by_xpath('//*[@id="contact_form"]/input[2]')
+last_name_textbox = driver.find_element_by_name('last_name')
 last_name_textbox.send_keys(lastname)
 
-email_textbox = driver.find_element_by_xpath('//*[@id="contact_form"]/input[3]')
+email_textbox = driver.find_element_by_name('email')
 email_textbox.send_keys(email)
 
-comment_textbox = driver.find_element_by_xpath('//*[@id="contact_form"]/textarea')
+comment_textbox = driver.find_element_by_name('message')
 comment_textbox.send_keys(comment)
 
-submit_btn = driver.find_element_by_xpath('//*[@id="form_buttons"]/input[2]')
-submit_btn.click()
+submit_btn = driver.find_element_by_xpath('//*[@id="form_buttons"]/input[2]').click()
 
-if driver.find_elements_by_css_selector('#contact_reply'):
-    print("The message has been sent successfully.")
+check = driver.find_element_by_tag_name('h1')
+assert check.text == "Thank You for your Message!"
+print("Message successfully sent.")
 
 sleep(5)
 driver.close()

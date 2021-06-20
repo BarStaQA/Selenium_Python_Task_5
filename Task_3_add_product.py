@@ -13,33 +13,33 @@ driver = webdriver.Chrome(executable_path='D:\Programming\Selenium_Python_Task_5
 driver.get('https://www.saucedemo.com/')
 driver.maximize_window() 
 
-username_textbox = driver.find_element_by_xpath('//*[@id="user-name"]') 
+username_textbox = driver.find_element_by_name('user-name') 
 username_textbox.send_keys(username)
 
-password_textbox = driver.find_element_by_xpath('//*[@id="password"]') 
+password_textbox = driver.find_element_by_name('password') 
 password_textbox.send_keys(password)
 
-login_btn = driver.find_element_by_xpath('//*[@id="login-button"]')
-login_btn.click()
+login_btn = driver.find_element_by_name('login-button').click()
 
-add_btn = driver.find_element_by_xpath('//*[@id="add-to-cart-sauce-labs-backpack"]')
+add_btn = driver.find_element_by_name('add-to-cart-sauce-labs-backpack')
 add_btn.click()
 
-shoping_card_btn = driver.find_elements_by_xpath('//*[@id="shopping_cart_container"]')[0]
+shoping_card_btn = driver.find_elements_by_class_name('shopping_cart_link')[0]
 shoping_card_btn.click()
 
-checkout_btn = driver.find_element_by_xpath('//*[@id="checkout"]').click()
+checkout_btn = driver.find_element_by_name('checkout').click()
 
-firstname_textbox = driver.find_element_by_xpath('//*[@id="first-name"]').send_keys(firstname) 
-lastname_textbox = driver.find_element_by_xpath('//*[@id="last-name"]').send_keys(lastname)
-zipcode_textbox = driver.find_element_by_xpath('//*[@id="postal-code"]').send_keys(zipcode)
+firstname_textbox = driver.find_element_by_name('firstName').send_keys(firstname) 
+lastname_textbox = driver.find_element_by_name('lastName').send_keys(lastname)
+zipcode_textbox = driver.find_element_by_name('postalCode').send_keys(zipcode)
 
-continue_btn = driver.find_element_by_xpath('//*[@id="continue"]').click()
+continue_btn = driver.find_element_by_name('continue').click()
 
 finish_btn = driver.find_element_by_name('finish').click()
 
-if driver.find_element_by_class_name('complete-text').text:
-    print("Your order has been dispatched, and will arrive just as fast as the pony can get there!")
+element = driver.find_element_by_class_name('complete-text')
+assert element.text == "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+print("Product correctly ordered")
 
 sleep(1)
 driver.close()
